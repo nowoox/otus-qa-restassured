@@ -6,12 +6,11 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.apache.http.HttpStatus;
 import org.json.JSONException;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
-
 
 public class UserTests {
 
@@ -31,7 +30,7 @@ public class UserTests {
 
 
     @Test
-    void getUserByFailName() {
+    public void getUserByFailName() {
 
         String userName = User.generateName();
 
@@ -49,7 +48,7 @@ public class UserTests {
     }
 
     @Test
-    void createUserWithNoData() {
+    public void createUserWithNoData() {
 
         given(requestSpecification)
         .when()
@@ -62,7 +61,7 @@ public class UserTests {
     }
 
     @Test
-    void createUser() throws JSONException {
+    public void createUser() throws JSONException {
 
         String userName = User.generateName();
 
